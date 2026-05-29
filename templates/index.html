@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Shauriya Garg</title>
+
+        <link rel="preconnect"
+            href="https://fonts.googleapis.com">
+
+        <link rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>Shauriya Garg</h1>
+
+        <div class="links">
+
+            <a href="https://github.com/ShauriyaDeveloper1"
+               target="_blank">
+
+                GitHub
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/shauriya-garg-746524322/"
+               target="_blank">
+
+                LinkedIn
+
+            </a>
+
+            <a href="/static/resume.pdf"
+               download>
+
+                Download Resume
+
+            </a>
+
+        </div>
+
+        <button id="theme-toggle">
+
+            Toggle Theme
+
+        </button>
+
+    </header>
+
+    <!-- ABOUT -->
+
+    <section>
+
+        <h2>About Me</h2>
+
+        <p class="about-text">
+
+            B.Tech Computer Science (Data Science) student at Bennett University with hands-on experience in Python, C++, machine learning, and data analysis.
+            Passionate about building AI-driven solutions and seeking internship opportunities to apply problem-solving skills and develop scalable software systems.
+
+        </p>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section>
+
+        <h2>Skills</h2>
+
+        <div class="skills-grid">
+            {% for category, items in skills.items() %}
+            <div class="skills-category">
+                <h3 class="skills-cat-title">{{ category }}</h3>
+                <div class="skills-chips">
+                    {% for s in items %}
+                    <span class="skill-chip">{{ skill_icons.get(s, '')|safe }} <span class="skill-name">{{ s }}</span></span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>Projects</h2>
+
+        {# Featured spotlight for the first project #}
+        {% if projects and projects|length > 0 %}
+        {% set featured = projects[0] %}
+        <div class="card featured">
+            <div class="featured-inner">
+                <div class="featured-left">
+                    <h3>{{ featured.title }}</h3>
+                    <p class="muted">{{ featured.description }}</p>
+                    <p><strong>Tech Stack:</strong> {{ featured.tech }}</p>
+                    <div class="project-links">
+                        <a class="btn" href="{{ featured.demo }}" target="_blank">
+                            <!-- external demo icon -->
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 3h7v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 21H3V3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Live Demo
+                        </a>
+                        <a class="btn ghost" href="{{ featured.github }}" target="_blank">
+                            <!-- github icon -->
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56 0-.28-.01-1.01-.02-1.98-3.2.7-3.88-1.38-3.88-1.38-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.68 0-1.25.45-2.27 1.2-3.07-.12-.3-.52-1.52.11-3.17 0 0 .98-.31 3.2 1.17a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.48 3.2-1.17 3.2-1.17.63 1.65.23 2.87.12 3.17.75.8 1.2 1.82 1.2 3.07 0 4.41-2.71 5.38-5.29 5.66.42.36.8 1.08.8 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="featured-right">
+                    {% if featured.image %}
+                    <div class="image-wrapper">
+                        <img src="{{ url_for('static', filename=featured.image) }}" alt="{{ featured.title }} screenshot" class="project-thumb" data-src="{{ url_for('static', filename=featured.image) }}">
+                        <button class="zoom-btn" aria-label="Zoom image" data-src="{{ url_for('static', filename=featured.image) }}">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        </button>
+                    </div>
+                    {% else %}
+                    <div class="spotlight" aria-hidden="true"></div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% for project in projects[1:] %}
+
+        <div class="card">
+            <div class="project-inner">
+                <div class="project-left">
+                    <h3><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7v10a2 2 0 0 0 2 2h14V7L12 3 3 7z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/></svg> {{ project.title }}</h3>
+
+                    <p>{{ project.description }}</p>
+
+                    <p>
+                        <strong>Tech Stack:</strong>
+                        {{ project.tech }}
+                    </p>
+
+                    <div class="project-links">
+
+                        <a class="btn" href="{{ project.demo }}" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 3h7v7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 21H3V3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Live Demo
+                        </a>
+
+                        <a class="btn ghost" href="{{ project.github }}" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56 0-.28-.01-1.01-.02-1.98-3.2.7-3.88-1.38-3.88-1.38-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.68 0-1.25.45-2.27 1.2-3.07-.12-.3-.52-1.52.11-3.17 0 0 .98-.31 3.2 1.17a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.48 3.2-1.17 3.2-1.17.63 1.65.23 2.87.12 3.17.75.8 1.2 1.82 1.2 3.07 0 4.41-2.71 5.38-5.29 5.66.42.36.8 1.08.8 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+                            GitHub
+                        </a>
+
+                    </div>
+                </div>
+                <div class="project-right">
+                    {% if project.image %}
+                    <div class="image-wrapper">
+                        <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }} screenshot" class="project-thumb" data-src="{{ url_for('static', filename=project.image) }}">
+                        <button class="zoom-btn" aria-label="Zoom image" data-src="{{ url_for('static', filename=project.image) }}">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        </button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+        <div class="more-projects">
+
+            <p>
+                For more projects, click on my GitHub profile and explore more source code and experiments.
+            </p>
+
+            <a href="https://github.com/ShauriyaDeveloper1"
+               target="_blank">
+
+                Visit GitHub
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+
+    <section>
+
+        <h2>Achievements</h2>
+
+        <ul>
+
+            {% for achievement in achievements %}
+
+            <li>{{ achievement }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </section>
+
+    <!-- CERTIFICATIONS -->
+
+    <section>
+
+        <h2>Certifications</h2>
+
+        <p class="cert-note">For verification, <a href="https://www.linkedin.com/in/shauriya-garg-746524322/details/certifications/" target="_blank">visit LinkedIn</a>.</p>
+
+        <ul>
+
+            {% for cert in certifications %}
+
+            <li>{{ cert }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section>
+
+        <h2>Contact</h2>
+
+        <p>Email: shauriyagarg@gmail.com</p>
+
+        <div class="links">
+
+            <a href="https://github.com/ShauriyaDeveloper1"
+               target="_blank">
+
+                GitHub
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/shauriya-garg-746524322/"
+               target="_blank">
+
+                LinkedIn
+
+            </a>
+
+            <a href="https://leetcode.com/u/Shauriya_Garg/" target="_blank">
+                LeetCode
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Shauriya Garg
+        </p>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+        // THEME TOGGLE + PERSISTENCE
+        const toggleBtn = document.getElementById('theme-toggle');
+
+        const applyTheme = (mode) => {
+            if (mode === 'light') document.body.classList.add('light-mode');
+            else document.body.classList.remove('light-mode');
+        };
+
+        // initialize theme from localStorage or prefers-color-scheme
+        const stored = localStorage.getItem('theme');
+        if (stored) applyTheme(stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) applyTheme('light');
+
+        toggleBtn.addEventListener('click', () => {
+            const isLight = document.body.classList.toggle('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+
+        // CARD REVEAL USING INTERSECTION OBSERVER
+        const cards = Array.from(document.querySelectorAll('.card'));
+
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const idx = cards.indexOf(el);
+                        // staggered reveal
+                        setTimeout(() => el.classList.add('in-view'), (idx % 6) * 120);
+                        io.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.18 });
+
+            cards.forEach(c => io.observe(c));
+        } else {
+            // fallback: reveal all
+            cards.forEach((c, i) => setTimeout(() => c.classList.add('in-view'), i * 80));
+        }
+
+        // small accessibility: allow toggle via keyboard
+        toggleBtn.addEventListener('keyup', (e) => { if (e.key === 'Enter' || e.key === ' ') toggleBtn.click(); });
+    </script>
+
+    <!-- LIGHTBOX MARKUP -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close lightbox">×</button>
+        <img src="" alt="Expanded project screenshot">
+    </div>
+
+    <script>
+        // IMAGE LIGHTBOX / ZOOM HANDLING
+        (function(){
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = lightbox.querySelector('img');
+            const lbClose = lightbox.querySelector('.lightbox-close');
+
+            function openLightbox(src, alt) {
+                lbImg.src = src;
+                lbImg.alt = alt || 'Expanded image';
+                lightbox.classList.add('open');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                lbImg.src = '';
+                document.body.style.overflow = '';
+            }
+
+            // Attach handlers to zoom buttons and images
+            document.querySelectorAll('.zoom-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const src = btn.getAttribute('data-src') || btn.dataset.src;
+                    openLightbox(src);
+                });
+            });
+
+            // Allow clicking image itself to open
+            document.querySelectorAll('.project-thumb').forEach(img => {
+                img.addEventListener('click', () => openLightbox(img.dataset.src || img.getAttribute('data-src'), img.alt));
+            });
+
+            lbClose.addEventListener('click', closeLightbox);
+
+            // close when clicking outside the image
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+            // escape key
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
+        })();
+    </script>
+
+</body>
+
+</html>
