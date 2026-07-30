@@ -61,10 +61,10 @@ def home():
 
     # Skills grouped per user's resume categories
     skills = {
-        "Languages": ["Python", "C++", "Java"],
-        "Libraries": ["Scikit-learn", "Pandas", "NumPy", "Matplotlib"],
-        "Tools": ["Git", "GitHub", "Google Colab"],
-        "Database": ["MySQL"]
+        "Languages": ["C++", "Python", "Java", "SQL"],
+        "Frameworks": ["Flask", "FastAPI", "Streamlit"],
+        "Tools/Platforms": ["Git", "GitHub", "MySQL", "Firebase", "Power BI"],
+        "Core CS": ["Data Structures & Algorithms", "OOP", "DBMS", "Operating Systems", "Computer Networks"]
     }
     # Simple SVG initials generator for skill 'logos'
     def svg_initials(label, size=28):
@@ -84,50 +84,57 @@ def home():
         "Python": "python",
         "C++": "cplusplus",
         "Java": "java",
-        "Scikit-learn": "scikitlearn",
-        "Pandas": "pandas",
-        "NumPy": "numpy",
-        "Matplotlib": "matplotlib",
+        "SQL": "mysql",
+        "Flask": "flask",
+        "FastAPI": "fastapi",
+        "Streamlit": "streamlit",
         "Git": "git",
         "GitHub": "github",
-        "Google Colab": "googlecolab",
-        "MySQL": "mysql"
+        "MySQL": "mysql",
+        "Firebase": "firebase",
+        "Power BI": "powerbi"
     }
 
     skill_icons = {}
     base = "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/{slug}.svg"
+    flat_skills = []
     for cat, items in skills.items():
         for s in items:
             slug = slug_map.get(s)
+            url = base.format(slug=slug) if slug else ""
             if slug:
-                url = base.format(slug=slug)
                 # use <img> so the SVG loads as an image; fallback to initials if loading blocked
                 skill_icons[s] = f'<img src="{url}" alt="{s} logo" class="skill-logo"/>'
+                flat_skills.append({"name": s, "icon": url})
             else:
                 skill_icons[s] = svg_initials(s)
+                # Note: For Matter.js we need a solid image, since SVG string might not load directly into canvas easily.
+                # But we can try to use a data URI for the SVG!
+                svg_string = skill_icons[s].replace('"', "'")
+                data_uri = f"data:image/svg+xml;utf8,{svg_string}"
+                flat_skills.append({"name": s, "icon": data_uri})
 
     achievements = [
-
-        "Qualified Round 1 of Meta PyTorch OpenEnv Hackathon",
-        "Ranked 256 out of 600+ participants in Smart BU Hackathon",
-        "Solved 100+ problems on different platforms like LeetCode and GeeksforGeeks",
-        "Participant at AMD AI Reinforcement Learning Hackathon, IIT Delhi"
+        "Meta PyTorch OpenEnv Hackathon: Selected among the top 800 teams from 31,000+ registered teams nationwide.",
+        "Smart BU Hackathon: Secured Rank 256 among 600+ participating teams.",
+        "LeetCode: Solved 300+ DSA problems across arrays, linked lists, trees and graphs."
     ]
 
     certifications = [
-
-        "Google - The Bits and Bytes of Computer Networking",
-        "Infosys Springboard - Data Structures and Algorithms",
-        "IBM - Introduction to Data Analytics",
-        "Google - Operating Systems and You: Becoming a Power User",
-        "NPTEL - Software Engineering"
+        "Certification of Software Engineering by NPTEL.",
+        "Certificate of Operating Systems and You: Becoming a Power User by Google",
+        "Certification for Data Structure and Algorithm by Infosys Springboard",
+        "Certification for The Bits and Bytes of Computing Networking by Google"
     ]
+
+    import json
 
     return render_template(
         "index.html",
         projects=projects,
         skills=skills,
         skill_icons=skill_icons,
+        flat_skills=json.dumps(flat_skills),
         achievements=achievements,
         certifications=certifications
     )
