@@ -1,29 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Initialize 3D Coverflow Carousel for Projects
-    if (typeof Swiper !== 'undefined') {
-        const swiper = new Swiper('.mySwiper', {
-            effect: 'coverflow',
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            coverflowEffect: {
-                rotate: 15,
-                stretch: 0,
-                depth: 300,
-                modifier: 1,
-                slideShadows: false, // Turn off default shadows to let our glassmorphism shine
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            initialSlide: 0,
-            keyboard: {
-                enabled: true,
-            },
-        });
-    }
 
     // Initialize Typewriter for About Me section using IntersectionObserver
     const aboutSection = document.getElementById('about');

@@ -8,20 +8,20 @@ def home():
     projects = [
 
         {
-            "title": "AI-Powered Interview Coach",
+            "title": "SMS Spam Detector",
 
             "description":
-            "AI platform using NLP, RL, speech analysis and posture tracking.",
+            "NLP-based spam classification system with 96% accuracy.",
 
             "tech":
-            "Python, Flask, OpenCV, PyTorch",
+            "Scikit-learn, Streamlit",
 
             "github":
-            "https://github.com/ShauriyaDeveloper1/AI-Powered-Interview-Coach",
+            "https://github.com/ShauriyaDeveloper1/SMS-Spam-Detector",
 
             "demo":
-            "https://huggingface.co/spaces/Shauriya24/AI-Powered-Interview-Coach",
-            "image": "ai.png"
+            "https://shauriyadeveloper1-sms-spam-detector-app-sqhwfy.streamlit.app/",
+            "image": "sms.png"
         },
 
         {
@@ -42,20 +42,20 @@ def home():
         },
 
         {
-            "title": "SMS Spam Detector",
+            "title": "AI-Powered Interview Coach",
 
             "description":
-            "NLP-based spam classification system with 96% accuracy.",
+            "AI platform using NLP, RL, speech analysis and posture tracking.",
 
             "tech":
-            "Scikit-learn, Streamlit",
+            "Python, Flask, OpenCV, PyTorch",
 
             "github":
-            "https://github.com/ShauriyaDeveloper1/SMS-Spam-Detector",
+            "https://github.com/ShauriyaDeveloper1/AI-Powered-Interview-Coach",
 
             "demo":
-            "https://shauriyadeveloper1-sms-spam-detector-app-sqhwfy.streamlit.app/",
-            "image": "sms.png"
+            "https://huggingface.co/spaces/Shauriya24/AI-Powered-Interview-Coach",
+            "image": "ai.png"
         }
     ]
 
@@ -127,6 +127,40 @@ def home():
         "Certification for The Bits and Bytes of Computing Networking by Google"
     ]
 
+    experience = [
+        {
+            "role": "AI Web Development Intern",
+            "company": "InAmigos Foundation",
+            "location": "Remote",
+            "date": "June 2026",
+            "description": "Developed AI-powered solutions and contributed to NGO website enhancement by analyzing existing platforms, designing new features, and creating responsive web interfaces using modern development tools."
+        }
+    ]
+
+    education = [
+        {
+            "role": "Bachelor of Technology - Computer Science and Engineering",
+            "company": "Bennett University",
+            "location": "Uttar Pradesh, India",
+            "date": "August 2024 - May 2028",
+            "description": "CGPA: 9.43. Favorite Courses: Object Oriented Programming, Data Structures, Analysis Of Algorithms, Data Science."
+        },
+        {
+            "role": "Intermediate",
+            "company": "Renaissance School",
+            "location": "Bulandshahr",
+            "date": "April 2022 - March 2024",
+            "description": "Percentage: 89.4%. Favorite Courses: Physics, Chemistry, Mathematics, Computer Science."
+        },
+        {
+            "role": "Matriculation",
+            "company": "Sunrise Public School",
+            "location": "Siyana, Bulandshahr",
+            "date": "April 2020 - March 2022",
+            "description": "Percentage: 87%."
+        }
+    ]
+
     import json
 
     return render_template(
@@ -136,7 +170,9 @@ def home():
         skill_icons=skill_icons,
         flat_skills=json.dumps(flat_skills),
         achievements=achievements,
-        certifications=certifications
+        certifications=certifications,
+        experience=experience,
+        education=education
     )
 
 
