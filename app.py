@@ -122,8 +122,8 @@ def home():
 
     certifications = [
         "Certification of Software Engineering by NPTEL.",
-        "Certificate of Operating Systems and You: Becoming a Power User by Google",
-        "Certification for Data Structure and Algorithm by Infosys Springboard",
+        "Certification of Azure AI Fundamentals by Microsoft",
+        "Certification for Fabric Data Engineer Associate by Microsoft",
         "Certification for The Bits and Bytes of Computing Networking by Google"
     ]
 
