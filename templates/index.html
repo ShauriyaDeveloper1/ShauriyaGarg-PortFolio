@@ -1,390 +1,692 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="dark" lang="en">
 <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Shauriya Garg — AI & Software Engineer</title>
+    <meta name="description" content="Portfolio of Shauriya Garg — B.Tech CSE (Data Science) at Bennett University. AI-Driven Software Engineer & ML Practitioner.">
 
-    <meta charset="UTF-8">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "background": "#0f131c",
+                    "surface": "#0f131c",
+                    "surface-dim": "#0f131c",
+                    "surface-bright": "#353943",
+                    "surface-container-lowest": "#0a0e17",
+                    "surface-container-low": "#181b25",
+                    "surface-container": "#1c1f29",
+                    "surface-container-high": "#262a34",
+                    "surface-container-highest": "#31353f",
+                    "surface-obsidian": "#090D16",
+                    "surface-card": "#0F172A",
+                    "surface-glass": "rgba(15, 23, 42, 0.65)",
+                    "on-surface": "#dfe2ef",
+                    "on-surface-variant": "#bcc9cd",
+                    "on-background": "#dfe2ef",
+                    "inverse-surface": "#dfe2ef",
+                    "inverse-on-surface": "#2c303a",
+                    "outline": "#869397",
+                    "outline-variant": "#3d494c",
+                    "surface-tint": "#4cd7f6",
+                    "surface-variant": "#31353f",
+                    "primary": "#4cd7f6",
+                    "on-primary": "#003640",
+                    "primary-container": "#06b6d4",
+                    "on-primary-container": "#00424f",
+                    "inverse-primary": "#00687a",
+                    "primary-fixed": "#acedff",
+                    "primary-fixed-dim": "#4cd7f6",
+                    "on-primary-fixed": "#001f26",
+                    "on-primary-fixed-variant": "#004e5c",
+                    "secondary": "#d0bcff",
+                    "on-secondary": "#3c0091",
+                    "secondary-container": "#571bc1",
+                    "on-secondary-container": "#c4abff",
+                    "secondary-fixed": "#e9ddff",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "on-secondary-fixed": "#23005c",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "tertiary": "#adc6ff",
+                    "on-tertiary": "#002e6a",
+                    "tertiary-container": "#78a5ff",
+                    "on-tertiary-container": "#00397f",
+                    "tertiary-fixed": "#d8e2ff",
+                    "tertiary-fixed-dim": "#adc6ff",
+                    "on-tertiary-fixed": "#001a42",
+                    "on-tertiary-fixed-variant": "#004395",
+                    "error": "#ffb4ab",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "on-error-container": "#ffdad6",
+                    "border-subtle": "rgba(255, 255, 255, 0.08)",
+                    "border-glow": "rgba(6, 182, 212, 0.35)",
+                    "text-primary": "#F8FAFC",
+                    "text-secondary": "#94A3B8",
+                    "text-muted": "#64748B",
+                    "accent-cyan": "#06B6D4",
+                    "accent-violet": "#8B5CF6",
+                    "accent-electric": "#3B82F6"
+                },
+                borderRadius: {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+                },
+                spacing: {
+                    "space-xl": "2.5rem",
+                    "margin-mobile": "1rem",
+                    "space-sm": "0.5rem",
+                    "space-md": "1rem",
+                    "gutter-sm": "1rem",
+                    "space-lg": "1.5rem",
+                    "space-section": "6rem",
+                    "margin": "2rem",
+                    "space-2xl": "4rem",
+                    "space-xs": "0.25rem",
+                    "gutter": "1.5rem"
+                },
+                fontFamily: {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "code": ["JetBrains Mono"]
+                },
+                fontSize: {
+                    "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-badge": ["11px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+                    "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "label-code": ["13px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+                    "title-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                }
+            }
+        }
+    }
+    </script>
 
-    <title>Shauriya Garg</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=1.2">
-
-    <!-- CDNs for Game-like Experience -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <style>
+        @layer base {
+            html, body { margin: 0; padding: 0; }
+            body { overscroll-behavior: none; }
+        }
+        ::-webkit-scrollbar { display: none; }
+        /* Portrait image styling for mobile app screenshots */
+        .portrait-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, rgba(6, 182, 212, 0.12) 0%, rgba(15, 23, 42, 0.7) 80%);
+        }
+        .portrait-container img {
+            height: 100%;
+            width: auto;
+            max-height: 160px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 1.5px solid rgba(6, 182, 212, 0.35);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .portrait-container:hover img {
+            transform: translateY(-2px) scale(1.04);
+            border-color: rgba(6, 182, 212, 0.7);
+        }
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
+<body class="bg-background font-body text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
 
-<body>
-
-    <!-- 3D Interactive Background -->
-    <div id="particles-js"></div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor-glow"></div>
-
-    <!-- HEADER -->
-
-    <header class="hero-section">
-
-        <div class="header-profile floating-element">
-            <img src="{{ url_for('static', filename='photo.jpeg') }}" alt="Shauriya Garg Profile Photo"
-                class="profile-img">
-        </div>
-
-        <h1 class="glitch-text" data-text="Shauriya Garg">Shauriya Garg</h1>
-
-        <div class="links">
-
-            <a href="https://github.com/ShauriyaDeveloper1" target="_blank" class="neon-btn">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;margin-right:8px;vertical-align:middle;">
-                    <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56 0-.28-.01-1.01-.02-1.98-3.2.7-3.88-1.38-3.88-1.38-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.68 0-1.25.45-2.27 1.2-3.07-.12-.3-.52-1.52.11-3.17 0 0 .98-.31 3.2 1.17a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.48 3.2-1.17 3.2-1.17.63 1.65.23 2.87.12 3.17.75.8 1.2 1.82 1.2 3.07 0 4.41-2.71 5.38-5.29 5.66.42.36.8 1.08.8 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
-                </svg>
-                GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/shauriya-garg-746524322/" target="_blank" class="neon-btn">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;margin-right:8px;vertical-align:middle;">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
-                </svg>
-                LinkedIn
-            </a>
-            <a href="{{ url_for('static', filename='resume.pdf') }}" download class="neon-btn primary">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;margin-right:8px;vertical-align:middle;">
-                    <path d="M12 16L7 11h3V4h4v7h3l-5 5zm9-2v6H3v-6H1v8h22v-8h-2z" />
-                </svg>
-                Download Resume
-            </a>
-        </div>
-    </header>
-
-    <!-- ABOUT -->
-
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="dialogue-box glass-panel">
-            <div id="typewriter-container" class="about-text">
-                B.Tech Computer Science (Data Science) student at Bennett University with hands-on experience in Python,
-                C++, machine learning, and data analysis.
-                Passionate about building AI-driven solutions and seeking internship opportunities to apply
-                problem-solving skills and develop scalable software systems.
+<!-- ========== FIXED HEADER / NAVBAR ========== -->
+<header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2.5">
+                <button type="button" id="profile-photo-btn" class="group relative cursor-pointer focus:outline-none" title="Click to view photo">
+                    <img src="{{ url_for('static', filename='photo.jpeg') }}" alt="Shauriya Garg" class="w-10 h-10 rounded-xl object-cover ring-2 ring-primary/30 group-hover:ring-primary group-hover:scale-105 transition-all shadow-sm">
+                    <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-primary rounded-full border-2 border-background"></span>
+                </button>
+                <a class="group flex flex-col" href="#">
+                    <span class="font-headline text-title-sm text-on-surface tracking-tight group-hover:text-primary transition-colors">Shauriya Garg</span>
+                    <span class="font-code text-label-badge text-on-surface-variant uppercase tracking-wider">AI & Software Eng</span>
+                </a>
+            </div>
+            <div class="hidden xl:flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span class="font-code text-label-badge uppercase tracking-wider text-primary">Available for Internships</span>
             </div>
         </div>
-    </section>
 
-    <!-- EXPERIENCE TIMELINE -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <p class="section-description">Professional experience and internships.</p>
-        <div class="timeline-container">
-            {% for exp in experience %}
-            <div class="timeline-item glass-card">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3 class="timeline-role">{{ exp.role }}</h3>
-                    <p class="timeline-company">{{ exp.company }} <span>| {{ exp.location }}</span></p>
-                    <p class="timeline-date">{{ exp.date }}</p>
-                    <p class="timeline-desc">{{ exp.description }}</p>
+        <nav class="hidden lg:flex items-center gap-6">
+            <a class="font-body text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#about">About</a>
+            <a class="font-body text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#experience">Experience</a>
+            <a class="font-body text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#projects">Projects</a>
+            <a class="font-body text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#skills">Skills</a>
+            <a class="font-body text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#achievements">Achievements</a>
+            <a class="font-body text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#contact">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+            <a aria-label="GitHub" class="p-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all" href="https://github.com/ShauriyaDeveloper1" target="_blank"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+            <a aria-label="LinkedIn" class="p-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all" href="https://www.linkedin.com/in/shauriya-garg-746524322/" target="_blank"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a class="relative inline-flex items-center gap-1 px-4 py-2 rounded-xl bg-gradient-to-r from-primary-container to-accent-electric text-text-primary font-headline text-body-sm shadow-[0_0_20px_rgba(6,182,212,0.35)] hover:shadow-[0_0_28px_rgba(6,182,212,0.55)] transition-all" href="{{ url_for('static', filename='resume.pdf') }}" download>
+                <span class="material-symbols-outlined text-[18px]">download</span>
+                <span>Resume</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- ========== MAIN CONTENT ========== -->
+<main class="w-full pt-20 bg-background min-h-screen">
+<div class="flex flex-col w-full relative overflow-hidden">
+
+<!-- Ambient Atmospheric Glows -->
+<div class="absolute top-10 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-gradient-to-tr from-accent-cyan/15 via-accent-violet/10 to-transparent blur-[140px] pointer-events-none -z-10 rounded-full"></div>
+<div class="absolute top-[1600px] -left-40 w-[600px] h-[600px] bg-accent-electric/10 blur-[160px] pointer-events-none -z-10 rounded-full"></div>
+<div class="absolute top-[3200px] -right-32 w-[550px] h-[550px] bg-accent-violet/15 blur-[150px] pointer-events-none -z-10 rounded-full"></div>
+
+<!-- ========== 1. HERO ========== -->
+<section class="max-w-7xl mx-auto px-4 lg:px-8 pt-6 pb-16 w-full">
+    <div class="flex flex-col items-center text-center space-y-4">
+        <!-- Status Badge -->
+        <div class="inline-flex items-center gap-1 px-4 py-1.5 rounded-full bg-surface-container-high shadow-sm">
+            <span class="inline-block w-2 h-2 rounded-full bg-accent-cyan animate-ping"></span>
+            <span class="font-code text-label-badge uppercase tracking-wider text-primary">⚡ Seeking Data Science & AI Internships</span>
+        </div>
+
+        <div class="max-w-4xl space-y-2 pt-1">
+            <h1 class="font-headline text-display-hero text-text-primary tracking-tight">
+                Shauriya <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent-cyan to-secondary">Garg</span>
+            </h1>
+            <p class="font-headline text-headline-md text-on-surface-variant font-medium">
+                B.Tech CSE (Data Science) @ Bennett University <span class="text-primary font-light">|</span> AI-Driven Software Engineer & ML Practitioner
+            </p>
+        </div>
+
+        <!-- CTA Buttons & Social -->
+        <div class="flex flex-wrap items-center justify-center gap-2 pt-4">
+            <a class="inline-flex items-center gap-1 px-6 py-3 rounded-xl bg-gradient-to-r from-primary-container to-accent-electric text-on-primary-container font-headline text-body-md shadow-[0_4px_24px_rgba(6,182,212,0.35)] hover:shadow-[0_8px_32px_rgba(6,182,212,0.55)] transition-all" href="#projects">
+                <span>Explore Projects</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+            </a>
+            <a class="inline-flex items-center gap-1 px-6 py-3 rounded-xl bg-surface-container-high text-on-surface font-headline text-body-md hover:bg-surface-container-highest transition-all shadow-sm" href="#experience">
+                <span>View Experience</span>
+                <span class="material-symbols-outlined text-[18px]">work</span>
+            </a>
+            <a class="inline-flex items-center gap-1 px-4 py-3 rounded-xl bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all shadow-sm" href="{{ url_for('static', filename='resume.pdf') }}" download>
+                <span class="material-symbols-outlined text-[18px]">description</span>
+                <span class="font-headline text-body-md">Resume</span>
+            </a>
+            <div class="flex items-center gap-1 ml-0 sm:ml-2 pt-1 sm:pt-0">
+                <a aria-label="GitHub" class="p-2.5 rounded-xl bg-surface-container-low text-on-surface-variant hover:text-accent-cyan hover:bg-surface-container transition-all shadow-sm" href="https://github.com/ShauriyaDeveloper1" target="_blank"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a aria-label="LinkedIn" class="p-2.5 rounded-xl bg-surface-container-low text-on-surface-variant hover:text-accent-cyan hover:bg-surface-container transition-all shadow-sm" href="https://www.linkedin.com/in/shauriya-garg-746524322/" target="_blank"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a aria-label="LeetCode" class="p-2.5 rounded-xl bg-surface-container-low text-on-surface-variant hover:text-accent-cyan hover:bg-surface-container transition-all shadow-sm" href="https://leetcode.com/u/Shauriya_Garg/" target="_blank"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg></a>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- ========== 2. ABOUT & EDUCATION ========== -->
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-10 w-full" id="about">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- Left: About -->
+        <div class="lg:col-span-5 flex flex-col space-y-4">
+            <div class="inline-flex items-center gap-1">
+                <span class="material-symbols-outlined text-primary text-[20px]">account_circle</span>
+                <span class="font-code text-label-badge uppercase tracking-widest text-primary">System Narrative</span>
+            </div>
+            <h2 class="font-headline text-headline-xl text-text-primary font-bold">About Me</h2>
+            <div class="p-6 rounded-2xl bg-surface-container-low shadow-sm space-y-2 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-28 h-28 bg-accent-cyan/10 rounded-full blur-2xl"></div>
+                <p class="font-body text-body-md text-on-surface-variant leading-relaxed">I am a B.Tech Computer Science (Data Science) undergraduate at Bennett University with hands-on technical fluency in Python, C++, machine learning architectures, and data analysis pipelines.</p>
+                <p class="font-body text-body-md text-on-surface-variant leading-relaxed">Passionate about building AI-driven solutions that simplify complexity. My core objective is securing internship opportunities where I can apply rigorous algorithmic problem-solving to build scalable, low-latency software systems.</p>
+            </div>
+
+        </div>
+
+        <!-- Right: Education Timeline -->
+        <div class="lg:col-span-7 flex flex-col space-y-4" id="education">
+            <div class="inline-flex items-center gap-1">
+                <span class="material-symbols-outlined text-secondary text-[20px]">school</span>
+                <span class="font-code text-label-badge uppercase tracking-widest text-secondary">Academic Credentials</span>
+            </div>
+            <h2 class="font-headline text-headline-xl text-text-primary font-bold">Education Timeline</h2>
+            <div class="flex flex-col space-y-4">
+                {% for edu in education %}
+                <div class="p-6 rounded-2xl bg-surface-container-low shadow-sm flex flex-col md:flex-row md:items-start justify-between gap-4 hover:bg-surface-container transition-all">
+                    <div class="space-y-1 max-w-xl">
+                        <span class="font-headline text-title-sm text-text-primary font-semibold">{{ edu.role }}</span>
+                        <p class="font-body text-body-md text-primary font-medium">{{ edu.company }} • {{ edu.location }}</p>
+                        <p class="font-body text-body-sm text-on-surface-variant pt-1">{{ edu.description }}</p>
+                        {% if edu.highlight %}
+                        <div class="pt-1">
+                            <span class="px-2 py-0.5 rounded bg-surface-container-high font-code text-label-badge text-primary">{{ edu.highlight }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="font-code text-label-badge text-text-muted whitespace-nowrap bg-surface-container-high px-3 py-1 rounded-full self-start">{{ edu.date }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== 3. EXPERIENCE ========== -->
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-10 w-full" id="experience">
+    <div class="flex flex-col space-y-4">
+        <div class="flex flex-col space-y-1">
+            <div class="inline-flex items-center gap-1">
+                <span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+                <span class="font-code text-label-badge uppercase tracking-widest text-primary">Industry Track</span>
+            </div>
+            <h2 class="font-headline text-headline-xl text-text-primary font-bold">Experience & Internships</h2>
+            <p class="font-body text-body-md text-text-secondary">Professional engineering tenures and applied project deployments.</p>
+        </div>
+
+        {% for exp in experience %}
+        <div class="p-10 rounded-3xl bg-surface-container-low shadow-sm flex flex-col lg:flex-row gap-10 items-start relative overflow-hidden">
+            <div class="lg:w-1/3 flex flex-col space-y-2">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/20 text-primary w-fit">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <span class="font-code text-label-badge uppercase">Completed</span>
+                </div>
+                <div>
+                    <h3 class="font-headline text-headline-md text-text-primary font-bold">{{ exp.role }}</h3>
+                    <p class="font-body text-body-lg text-primary font-semibold">{{ exp.company }}</p>
+                </div>
+                <div class="flex flex-col space-y-1 font-code text-label-code text-text-muted">
+                    <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">location_on</span> {{ exp.location }}</span>
+                    <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">calendar_month</span> {{ exp.date }}</span>
+                </div>
+                {% if exp.tools %}
+                <div class="pt-1">
+                    <span class="font-code text-label-badge uppercase tracking-wider text-text-muted">Key Tools</span>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        {% for tool in exp.tools %}
+                        <span class="px-2 py-0.5 rounded bg-surface-container text-accent-cyan font-code text-[11px]">{{ tool }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="lg:w-2/3 flex flex-col space-y-4">
+                <div class="p-6 rounded-2xl bg-surface-container shadow-sm space-y-2">
+                    <h4 class="font-headline text-title-sm text-on-surface font-semibold flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-[20px]">smart_toy</span>
+                        AI-Driven Software Augmentation
+                    </h4>
+                    <p class="font-body text-body-md text-on-surface-variant leading-relaxed">{{ exp.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ========== 4. PROJECTS ========== -->
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-10 w-full" id="projects">
+    <div class="flex flex-col space-y-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div class="space-y-1 max-w-2xl">
+                <div class="inline-flex items-center gap-1">
+                    <span class="material-symbols-outlined text-accent-cyan text-[20px]">rocket_launch</span>
+                    <span class="font-code text-label-badge uppercase tracking-widest text-accent-cyan">Production Portfolio</span>
+                </div>
+                <h2 class="font-headline text-headline-xl text-text-primary font-bold">Featured Projects</h2>
+                <p class="font-body text-body-md text-text-secondary">A curated showcase of recent engineering work spanning NLP, computer vision, and reactive data analytics.</p>
+            </div>
+            <a class="inline-flex items-center gap-1 px-4 py-2.5 rounded-xl bg-surface-container-high text-primary hover:bg-surface-container-highest transition-all shadow-sm self-start md:self-end" href="https://github.com/ShauriyaDeveloper1" target="_blank">
+                <span class="material-symbols-outlined text-[18px]">terminal</span>
+                <span class="font-headline text-body-sm">View All Repositories</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {% for project in projects %}
+            <div class="p-6 rounded-3xl bg-surface-container-low shadow-sm flex flex-col justify-between hover:bg-surface-container transition-all group">
+                <div class="space-y-4">
+                    <!-- Project Image -->
+                    {% if project.image %}
+                    <div class="relative rounded-2xl bg-surface-container-lowest overflow-hidden aspect-[16/10] shadow-inner {% if project.get('portrait') %}portrait-container{% endif %}">
+                        <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }} screenshot" class="w-full h-full {% if not project.get('portrait') %}object-cover object-top{% endif %}">
+                    </div>
+                    {% endif %}
+
+                    <div class="space-y-1">
+                        <h3 class="font-headline text-headline-md text-text-primary font-bold group-hover:text-primary transition-colors">{{ project.title }}</h3>
+                        <p class="font-body text-body-sm text-on-surface-variant leading-relaxed">{{ project.description }}</p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        {% for t in project.tech %}
+                        <span class="px-2.5 py-1 rounded-full bg-surface-container-high text-{{ ['accent-cyan', 'secondary', 'primary', 'tertiary', 'on-surface-variant'][loop.index0 % 5] }} font-code text-label-badge">{{ t }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="pt-6 flex items-center justify-between gap-1">
+                    {% if project.demo %}
+                    <a class="inline-flex items-center gap-1 text-primary hover:text-accent-cyan font-headline text-body-sm transition-colors" href="{{ project.demo }}" target="_blank">
+                        <span>Live Demo</span>
+                        <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+                    </a>
+                    {% endif %}
+                    <a class="inline-flex items-center gap-1 text-on-surface-variant hover:text-text-primary font-headline text-body-sm transition-colors" href="{{ project.github }}" target="_blank">
+                        <span class="material-symbols-outlined text-[16px]">code</span>
+                        <span>Source</span>
+                    </a>
                 </div>
             </div>
             {% endfor %}
         </div>
-    </section>
 
-    <!-- EDUCATION TIMELINE -->
-    <section id="education">
-        <h2>Education</h2>
-        <p class="section-description">Academic background and qualifications.</p>
-        <div class="timeline-container">
-            {% for edu in education %}
-            <div class="timeline-item glass-card">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3 class="timeline-role">{{ edu.role }}</h3>
-                    <p class="timeline-company">{{ edu.company }} <span>| {{ edu.location }}</span></p>
-                    <p class="timeline-date">{{ edu.date }}</p>
-                    <p class="timeline-desc">{{ edu.description }}</p>
-                </div>
+    </div>
+</section>
+
+<!-- ========== 5. SKILLS ========== -->
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-10 w-full" id="skills">
+    <div class="flex flex-col space-y-6">
+        <div class="space-y-1">
+            <div class="inline-flex items-center gap-1">
+                <span class="material-symbols-outlined text-secondary text-[20px]">memory</span>
+                <span class="font-code text-label-badge uppercase tracking-widest text-secondary">Stack Taxonomy</span>
             </div>
-            {% endfor %}
+            <h2 class="font-headline text-headline-xl text-text-primary font-bold">Technical Skills</h2>
+            <p class="font-body text-body-md text-text-secondary">Engineered proficiencies categorized across programming, deployment, and CS theory.</p>
         </div>
-    </section>
 
-    <!-- SKILLS: Grouped Categories -->
-    <section id="skills-section">
-        <h2>Skills</h2>
-        <p class="section-description">Technical proficiencies categorized by domain.</p>
-
-        <div class="skills-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {% for cat, items in skills.items() %}
-            <div class="skills-category glass-card">
-                <h3 class="skills-cat-title">{{ cat }}</h3>
-                <div class="skills-chips">
-                    {% for item in items %}
-                    <div class="skill-chip">
-                        {{ skill_icons.get(item, '') | safe }}
-                        <span class="skill-name">{{ item }}</span>
+            <div class="p-6 rounded-3xl bg-surface-container-low shadow-sm flex flex-col space-y-4">
+                <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-{{ skill_category_colors.get(cat, 'primary') }} text-[22px]">{{ skill_category_icons.get(cat, 'code') }}</span>
+                    <span class="font-headline text-title-sm text-text-primary font-semibold">{{ cat }}</span>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    {% for skill in items %}
+                    <div class="p-2.5 rounded-xl bg-surface-container flex items-center justify-between">
+                        <span class="font-headline text-body-md text-on-surface font-medium">{{ skill }}</span>
                     </div>
                     {% endfor %}
                 </div>
             </div>
             {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <p class="section-description">A showcase of my recent work in software development and machine learning, demonstrating problem-solving and technical execution.</p>
-
-        <div class="timeline-container">
-            {% for project in projects %}
-            <div class="timeline-item glass-card project-card" data-tilt data-tilt-max="5" data-tilt-speed="400"
-                data-tilt-glare data-tilt-max-glare="0.2">
-                <div class="timeline-dot"></div>
-                <div class="project-inner">
-                    <div class="project-left">
-                                <h3><svg class="icon" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 7v10a2 2 0 0 0 2 2h14V7L12 3 3 7z" stroke="currentColor"
-                                            stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" />
-                                    </svg> {{ project.title }}</h3>
-                                <p>{{ project.description }}</p>
-                                <p><strong>Tech Stack:</strong> {{ project.tech }}</p>
-                                <div class="project-links">
-                                    <a class="btn" href="{{ project.demo }}" target="_blank">
-                                        <svg class="icon" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M14 3h7v7" stroke="currentColor" stroke-width="1.4"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M10 14L21 3" stroke="currentColor" stroke-width="1.4"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M21 21H3V3" stroke="currentColor" stroke-width="1.4"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        Live Demo
-                                    </a>
-                                    <a class="btn ghost" href="{{ project.github }}" target="_blank">
-                                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56 0-.28-.01-1.01-.02-1.98-3.2.7-3.88-1.38-3.88-1.38-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.68 0-1.25.45-2.27 1.2-3.07-.12-.3-.52-1.52.11-3.17 0 0 .98-.31 3.2 1.17a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.48 3.2-1.17 3.2-1.17.63 1.65.23 2.87.12 3.17.75.8 1.2 1.82 1.2 3.07 0 4.41-2.71 5.38-5.29 5.66.42.36.8 1.08.8 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-right">
-                                {% if project.image %}
-                                <div class="image-wrapper">
-                                    <img src="{{ url_for('static', filename=project.image) }}"
-                                        alt="{{ project.title }} screenshot" class="project-thumb"
-                                        data-src="{{ url_for('static', filename=project.image) }}">
-                                    <button class="zoom-btn" aria-label="Zoom image"
-                                        data-src="{{ url_for('static', filename=project.image) }}">
-                                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6" />
-                                            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6"
-                                                stroke-linecap="round" />
-                                        </svg>
-                                    </button>
-                                </div>
-                                {% endif %}
-                            </div>
+<!-- ========== 6. ACHIEVEMENTS & CERTIFICATIONS ========== -->
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-10 w-full" id="achievements">
+    <div class="flex flex-col space-y-10">
+        <!-- Achievements -->
+        <div class="space-y-4">
+            <div class="space-y-1">
+                <div class="inline-flex items-center gap-1">
+                    <span class="material-symbols-outlined text-primary text-[20px]">emoji_events</span>
+                    <span class="font-code text-label-badge uppercase tracking-widest text-primary">Competitive Honors</span>
                 </div>
+                <h2 class="font-headline text-headline-xl text-text-primary font-bold">Key Achievements</h2>
+                <p class="font-body text-body-md text-text-secondary">Verified hackathon placements and competitive problem-solving milestones.</p>
             </div>
-            {% endfor %}
-        </div>
-
-        <div class="more-projects">
-
-            <p>
-                For more projects, click on my GitHub profile and explore more source code and experiments.
-            </p>
-
-            <a href="https://github.com/ShauriyaDeveloper1" target="_blank">
-
-                Visit GitHub
-
-            </a>
-
-        </div>
-
-    </section>
-
-    <section>
-        <h2>Achievements</h2>
-        <p class="section-description">Key milestones and competitive programming accomplishments.</p>
-        <div class="trophy-grid">
-            {% for achievement in achievements %}
-            <div class="static-card glass-card">
-                <svg class="icon trophy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M8 21h8M12 17v4M7 4h10M5 4h14a1 1 0 0 1 1 1v3a6 6 0 0 1-6 6h-4a6 6 0 0 1-6-6V5a1 1 0 0 1 1-1z"></path>
-                </svg>
-                <div class="static-card-content">
-                    <p class="trophy-label">Achievement</p>
-                    <p class="trophy-text">{{ achievement }}</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {% for ach in achievements %}
+                <div class="p-6 rounded-3xl bg-surface-container-low shadow-sm flex flex-col justify-between space-y-4 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-{{ ach.color }}/15 flex items-center justify-center text-{{ ach.color }}">
+                        <span class="material-symbols-outlined text-[28px]">{{ ach.icon }}</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="font-code text-label-badge uppercase text-{{ ach.color }}">{{ ach.badge }}</span>
+                        <h3 class="font-headline text-title-sm text-text-primary font-semibold">{{ ach.title }}</h3>
+                        <p class="font-body text-body-sm text-on-surface-variant leading-relaxed">{{ ach.description }}</p>
+                    </div>
+                    <div class="pt-1">
+                        <span class="font-code text-[12px] text-text-muted">{{ ach.stat }}</span>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
-    </section>
 
-    <!-- CERTIFICATIONS -->
-    <section>
-        <h2>Certifications</h2>
-        <p class="section-description">Professional credentials validating my technical expertise. For verification, <a href="https://www.linkedin.com/in/shauriya-garg-746524322/details/certifications/" target="_blank">visit LinkedIn</a>.</p>
-
-        <div class="trophy-grid">
-            {% for cert in certifications %}
-            <div class="static-card glass-card">
-                <svg class="icon cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-                <div class="static-card-content">
-                    <p class="trophy-label">Certification</p>
-                    <p class="trophy-text">{{ cert }}</p>
+        <!-- Certifications -->
+        <div class="space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                <div class="space-y-1">
+                    <div class="inline-flex items-center gap-1">
+                        <span class="material-symbols-outlined text-accent-cyan text-[20px]">verified</span>
+                        <span class="font-code text-label-badge uppercase tracking-widest text-accent-cyan">Credentials</span>
+                    </div>
+                    <h2 class="font-headline text-headline-xl text-text-primary font-bold">Certifications</h2>
                 </div>
+                <a class="inline-flex items-center gap-1 text-primary hover:text-accent-cyan font-headline text-body-sm transition-colors self-start sm:self-end" href="https://www.linkedin.com/in/shauriya-garg-746524322/details/certifications/" target="_blank">
+                    <span>Verify on LinkedIn</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+                </a>
             </div>
-            {% endfor %}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {% for cert in certifications %}
+                <div class="p-6 rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between space-y-2">
+                    <div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-{{ cert.color }}">
+                        <span class="material-symbols-outlined text-[22px]">{{ cert.icon }}</span>
+                    </div>
+                    <div>
+                        <span class="font-code text-label-badge uppercase text-text-muted block">{{ cert.issuer }}</span>
+                        <h4 class="font-headline text-body-md text-text-primary font-semibold mt-1">{{ cert.title }}</h4>
+                        <p class="font-body text-body-sm text-on-surface-variant mt-1">{{ cert.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CONTACT -->
-    <section class="contact-section">
-        <h2>Initiate Connection</h2>
-        <div class="contact-container glass-panel">
-            <p class="contact-cta">I'm currently seeking internship opportunities where I can contribute to exciting Data Science and Software Engineering projects. Whether you have a role in mind or just want to connect, my inbox is always open!</p>
-            
-            <div class="email-wrapper">
-                <p class="contact-email"><span class="glow-text" id="email-text">shauriyagarg@gmail.com</span></p>
-                <button class="copy-btn" id="copy-btn" aria-label="Copy Email" title="Copy to clipboard">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                    <span class="copy-tooltip" id="copy-tooltip">Copied!</span>
+<!-- ========== 7. CONTACT ========== -->
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16 w-full" id="contact">
+    <div class="relative p-10 md:p-16 rounded-3xl bg-surface-container-low shadow-lg overflow-hidden flex flex-col items-center text-center space-y-6">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-accent-violet/10 pointer-events-none"></div>
+
+        <div class="space-y-1 max-w-2xl relative z-10">
+            <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-primary">
+                <span class="w-2 h-2 rounded-full bg-accent-cyan animate-pulse"></span>
+                <span class="font-code text-label-badge uppercase tracking-wider">Direct Access Interface</span>
+            </div>
+            <h2 class="font-headline text-display-hero-mobile md:text-headline-xl text-text-primary font-bold">Initiate Connection</h2>
+            <p class="font-body text-body-lg text-on-surface-variant leading-relaxed">I'm currently seeking internship opportunities where I can contribute to exciting Data Science and Software Engineering projects. Whether you have an engineering role in mind or just want to connect, my inbox is always open!</p>
+        </div>
+
+        <!-- Email Copy Module -->
+        <div class="relative z-10 w-full max-w-md flex flex-col items-center gap-2">
+            <div class="w-full flex items-center justify-between p-2 pl-4 rounded-2xl bg-surface-container shadow-inner">
+                <span class="font-code text-body-md text-primary select-all" id="email-address">shauriyagarg@gmail.com</span>
+                <button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-body-sm font-headline transition-all shadow-sm" id="copy-email-btn">
+                    <span class="material-symbols-outlined text-[18px]" id="copy-icon">content_copy</span>
+                    <span id="copy-text">Copy Email</span>
                 </button>
             </div>
+            <span class="font-code text-[12px] text-accent-cyan opacity-0 transition-opacity duration-300" id="copy-toast">✓ Copied to clipboard!</span>
+        </div>
 
-            <div class="links contact-links">
-                <a href="https://github.com/ShauriyaDeveloper1" target="_blank" class="neon-btn">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;margin-right:8px;vertical-align:middle;">
-                        <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56 0-.28-.01-1.01-.02-1.98-3.2.7-3.88-1.38-3.88-1.38-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.68 0-1.25.45-2.27 1.2-3.07-.12-.3-.52-1.52.11-3.17 0 0 .98-.31 3.2 1.17a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.48 3.2-1.17 3.2-1.17.63 1.65.23 2.87.12 3.17.75.8 1.2 1.82 1.2 3.07 0 4.41-2.71 5.38-5.29 5.66.42.36.8 1.08.8 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
-                    </svg>
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/shauriya-garg-746524322/" target="_blank" class="neon-btn">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;margin-right:8px;vertical-align:middle;">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
-                    </svg>
-                    LinkedIn
-                </a>
-                <a href="https://leetcode.com/u/Shauriya_Garg/" target="_blank" class="neon-btn">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;margin-right:8px;vertical-align:middle;">
-                        <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114l5.313-5.693a.522.522 0 0 1 .737-.021c.204.188.223.518.021.737l-5.313 5.693-.01.01a.343.343 0 0 0-.056.402.345.345 0 0 0 .346.188h7.964c.762 0 1.38.618 1.38 1.38s-.618 1.38-1.38 1.38H10.15a.345.345 0 0 0-.346.188.343.343 0 0 0 .056.402l.01.01 5.313 5.693c.202.219.183.549-.021.737a.522.522 0 0 1-.737-.021l-5.313-5.693a2.545 2.545 0 0 1-.619-1.164 2.68 2.68 0 0 1-.066-.523 2.766 2.766 0 0 1 .948-2.263l4.276-4.193.02-.019a3.021 3.021 0 0 1 4.205.038l2.396 2.392a1.378 1.378 0 0 0 1.951-.003c.537-.541.537-1.415-.003-1.955l-2.396-2.392a5.753 5.753 0 0 0-8.063-.074l-.039.038-4.277 4.193a5.938 5.938 0 0 0-1.271 1.818 5.83 5.83 0 0 0-.349 1.017 5.527 5.527 0 0 0-.062 2.362 5.35 5.35 0 0 0 .125.513 5.266 5.266 0 0 0 1.209 2.104l3.854 4.126 5.406 5.788a1.374 1.374 0 0 0 .961.438h.001z"/>
-                    </svg>
-                    LeetCode
-                </a>
+        <!-- Social Links -->
+        <div class="relative z-10 flex flex-wrap justify-center items-center gap-2 pt-1">
+            <a class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-accent-cyan transition-all shadow-sm" href="https://github.com/ShauriyaDeveloper1" target="_blank">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                <span class="font-headline text-body-sm">GitHub</span>
+            </a>
+            <a class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-accent-cyan transition-all shadow-sm" href="https://www.linkedin.com/in/shauriya-garg-746524322/" target="_blank">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <span class="font-headline text-body-sm">LinkedIn</span>
+            </a>
+            <a class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-accent-cyan transition-all shadow-sm" href="https://leetcode.com/u/Shauriya_Garg/" target="_blank">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+                <span class="font-headline text-body-sm">LeetCode</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+</div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="w-full bg-surface-container-lowest py-16">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="flex flex-col gap-2 md:col-span-2">
+                <div class="flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-high text-primary font-headline text-body-lg">SG</span>
+                    <span class="font-headline text-headline-md text-on-surface">Shauriya Garg</span>
+                </div>
+                <p class="font-body text-body-md text-on-surface-variant max-w-md">B.Tech CSE with specialization in Data Science at Bennett University. Focused on AI architectures, machine learning models, and high-performance software systems.</p>
+                <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[18px] text-primary">mail</span>
+                    <span class="font-code text-label-code">shauriyagarg@gmail.com</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2">
+                <span class="font-code text-label-badge uppercase tracking-wider text-on-surface">Navigation</span>
+                <div class="flex flex-col gap-1">
+                    <a class="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#about">About Me</a>
+                    <a class="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#experience">Experience</a>
+                    <a class="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#projects">Featured Projects</a>
+                    <a class="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#skills">Technical Skills</a>
+                    <a class="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#achievements">Achievements</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2">
+                <span class="font-code text-label-badge uppercase tracking-wider text-on-surface">Connect</span>
+                <div class="flex flex-col gap-1">
+                    <a class="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="https://github.com/ShauriyaDeveloper1" target="_blank"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</a>
+                    <a class="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="https://www.linkedin.com/in/shauriya-garg-746524322/" target="_blank"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+                    <a class="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="https://leetcode.com/u/Shauriya_Garg/" target="_blank"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>LeetCode</a>
+                    <a class="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" href="#contact"><span class="material-symbols-outlined text-[16px]">send</span>Get in Touch</a>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <p>
-            © 2026 Shauriya Garg
-        </p>
-
-    </footer>
-
-    <!-- JAVASCRIPT -->
-    <script src="{{ url_for('static', filename='bg.js') }}?v=1.2"></script>
-    <script src="{{ url_for('static', filename='physics.js') }}?v=1.2"></script>
-    <script src="{{ url_for('static', filename='game-ui.js') }}?v=1.2"></script>
-
-    <!-- LIGHTBOX MARKUP -->
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-        <button class="lightbox-close" aria-label="Close lightbox">×</button>
-        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Expanded project screenshot">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6">
+            <span class="font-body text-body-sm text-on-surface-variant">© 2026 Shauriya Garg. Engineered with high-throughput minimalism.</span>
+            <span class="font-code text-label-badge text-outline">BU // CSE-DS // v3.0</span>
+        </div>
     </div>
+</footer>
 
-    <script>
-        // IMAGE LIGHTBOX / ZOOM HANDLING
-        (function () {
-            const lightbox = document.getElementById('lightbox');
-            const lbImg = lightbox.querySelector('img');
-            const lbClose = lightbox.querySelector('.lightbox-close');
+<!-- ========== PHOTO MODAL ========== -->
+<div id="photo-modal" class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-label="Shauriya Garg Photo">
+    <div id="photo-modal-card" class="relative max-w-xs sm:max-w-sm w-full bg-surface-container-low border border-outline-variant/30 rounded-3xl p-5 shadow-2xl flex flex-col items-center transform scale-95 transition-all duration-300">
+        <!-- Close Button -->
+        <button id="close-photo-modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-text-primary flex items-center justify-center transition-all z-10" aria-label="Close modal">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
 
-            function openLightbox(src, alt) {
-                lbImg.src = src;
-                lbImg.alt = alt || 'Expanded image';
-                lightbox.classList.add('open');
-                lightbox.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
+        <!-- Ambient glow behind image -->
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-48 h-48 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Enlarged Photo -->
+        <div class="relative w-full aspect-[4/5] max-h-[380px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-primary/30 mb-4 bg-surface-container">
+            <img src="{{ url_for('static', filename='photo.jpeg') }}" alt="Shauriya Garg" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Info Header -->
+        <div class="text-center space-y-1">
+            <h3 class="font-headline text-headline-sm font-bold text-text-primary">Shauriya Garg</h3>
+            <p class="font-code text-label-badge text-primary uppercase tracking-wider">AI & Software Engineer</p>
+            <p class="font-body text-body-xs text-on-surface-variant">B.Tech CSE (Data Science) • Bennett University</p>
+        </div>
+    </div>
+</div>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+    // Copy email to clipboard
+    document.getElementById('copy-email-btn').addEventListener('click', function() {
+        const email = "shauriyagarg@gmail.com";
+        navigator.clipboard.writeText(email).then(() => {
+            const copyText = document.getElementById("copy-text");
+            const copyIcon = document.getElementById("copy-icon");
+            const copyToast = document.getElementById("copy-toast");
+            if (copyText && copyIcon && copyToast) {
+                copyText.innerText = "Copied!";
+                copyIcon.innerText = "check";
+                copyToast.classList.remove("opacity-0");
+                copyToast.classList.add("opacity-100");
+                setTimeout(() => {
+                    copyText.innerText = "Copy Email";
+                    copyIcon.innerText = "content_copy";
+                    copyToast.classList.remove("opacity-100");
+                    copyToast.classList.add("opacity-0");
+                }, 2400);
             }
+        });
+    });
 
-            function closeLightbox() {
-                lightbox.classList.remove('open');
-                lightbox.setAttribute('aria-hidden', 'true');
-                lbImg.src = '';
-                document.body.style.overflow = '';
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
+        });
+    });
 
-            // Attach handlers to zoom buttons and images
-            document.querySelectorAll('.zoom-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const src = btn.getAttribute('data-src') || btn.dataset.src;
-                    openLightbox(src);
-                });
-            });
+    // Photo Modal enlarge logic
+    const photoBtn = document.getElementById('profile-photo-btn');
+    const photoModal = document.getElementById('photo-modal');
+    const photoModalCard = document.getElementById('photo-modal-card');
+    const closePhotoModal = document.getElementById('close-photo-modal');
 
-            // Allow clicking image itself to open
-            document.querySelectorAll('.project-thumb').forEach(img => {
-                img.addEventListener('click', () => openLightbox(img.dataset.src || img.getAttribute('data-src'), img.alt));
-            });
+    function openPhotoModal() {
+        if (!photoModal) return;
+        photoModal.classList.remove('opacity-0', 'pointer-events-none');
+        photoModalCard.classList.remove('scale-95');
+        photoModalCard.classList.add('scale-100');
+        document.body.style.overflow = 'hidden';
+    }
 
-            lbClose.addEventListener('click', closeLightbox);
+    function closePhotoModalFunc() {
+        if (!photoModal) return;
+        photoModal.classList.add('opacity-0', 'pointer-events-none');
+        photoModalCard.classList.remove('scale-100');
+        photoModalCard.classList.add('scale-95');
+        document.body.style.overflow = '';
+    }
 
-            // close when clicking outside the image
-            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-
-            // escape key
-            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
-        })();
-
-        // Copy to clipboard functionality
-        const copyBtn = document.getElementById('copy-btn');
-        const emailText = document.getElementById('email-text');
-        const copyTooltip = document.getElementById('copy-tooltip');
-
-        if(copyBtn && emailText && copyTooltip) {
-            copyBtn.addEventListener('click', () => {
-                navigator.clipboard.writeText(emailText.innerText).then(() => {
-                    copyTooltip.classList.add('show');
-                    setTimeout(() => {
-                        copyTooltip.classList.remove('show');
-                    }, 2000);
-                }).catch(err => {
-                    console.error('Failed to copy text: ', err);
-                });
-            });
+    if (photoBtn) photoBtn.addEventListener('click', openPhotoModal);
+    if (closePhotoModal) closePhotoModal.addEventListener('click', closePhotoModalFunc);
+    if (photoModal) {
+        photoModal.addEventListener('click', (e) => {
+            if (e.target === photoModal) closePhotoModalFunc();
+        });
+    }
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && photoModal && !photoModal.classList.contains('opacity-0')) {
+            closePhotoModalFunc();
         }
-    </script>
+    });
+</script>
 
 </body>
-
 </html>

@@ -8,54 +8,31 @@ def home():
     projects = [
 
         {
-            "title": "SMS Spam Detector",
-
-            "description":
-            "NLP-based spam classification system with 96% accuracy.",
-
-            "tech":
-            "Scikit-learn, Streamlit",
-
-            "github":
-            "https://github.com/ShauriyaDeveloper1/SMS-Spam-Detector",
-
-            "demo":
-            "https://shauriyadeveloper1-sms-spam-detector-app-sqhwfy.streamlit.app/",
-            "image": "sms.png"
-        },
-
-        {
             "title": "Aadhaar Enrollment Analytics Dashboard",
-
-            "description":
-            "Interactive analytics dashboard with charts and KPI metrics.",
-
-            "tech":
-            "FastAPI, React, Plotly",
-
-            "github":
-            "https://github.com/ShauriyaDeveloper1/Adhaar-Enrollment-Dashboard",
-
-            "demo":
-            "https://adhaar-enrollment-dashboard-jkkj.vercel.app/",
+            "description": "Interactive analytics dashboard with charts and KPI metrics.",
+            "tech": ["FastAPI", "React", "Plotly"],
+            "github": "https://github.com/ShauriyaDeveloper1/Adhaar-Enrollment-Dashboard",
+            "demo": "https://adhaar-enrollment-dashboard-jkkj.vercel.app/",
             "image": "aadhaar.png"
         },
 
         {
             "title": "AI-Powered Interview Coach",
-
-            "description":
-            "AI platform using NLP, RL, speech analysis and posture tracking.",
-
-            "tech":
-            "Python, Flask, OpenCV, PyTorch",
-
-            "github":
-            "https://github.com/ShauriyaDeveloper1/AI-Powered-Interview-Coach",
-
-            "demo":
-            "https://huggingface.co/spaces/Shauriya24/AI-Powered-Interview-Coach",
+            "description": "AI platform using NLP, RL, speech analysis and posture tracking.",
+            "tech": ["Python", "Flask", "OpenCV", "PyTorch"],
+            "github": "https://github.com/ShauriyaDeveloper1/AI-Powered-Interview-Coach",
+            "demo": "https://huggingface.co/spaces/Shauriya24/AI-Powered-Interview-Coach",
             "image": "ai.png"
+        },
+
+        {
+            "title": "VoiceShield - AI Voice Deepfake Detection",
+            "description": "Real-time AI voice deepfake detection and call security platform with AASIST neural networks.",
+            "tech": ["Python", "FastAPI", "React", "Kotlin", "PyTorch", "Supabase"],
+            "github": "https://github.com/ShauriyaDeveloper1/voice-shield",
+            "demo": None,
+            "image": "voiceshield.jpeg",
+            "portrait": True
         }
     ]
 
@@ -66,65 +43,79 @@ def home():
         "Tools/Platforms": ["Git", "GitHub", "MySQL", "Firebase", "Power BI"],
         "Core CS": ["Data Structures & Algorithms", "OOP", "DBMS", "Operating Systems", "Computer Networks"]
     }
-    # Simple SVG initials generator for skill 'logos'
-    def svg_initials(label, size=28):
-        # pick a deterministic color from a palette
-        palette = ["#06b6d4", "#7c5cff", "#38bdf8", "#2563eb", "#14b8a6", "#fb7185"]
-        key = sum(ord(c) for c in label) % len(palette)
-        color = palette[key]
-        # initials: take up to 2 characters
-        clean = ''.join(ch for ch in label if ch.isalnum())
-        initials = (clean[:2] or label[:2]).upper()
-        svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 {size} {size}" aria-hidden="true"><circle cx="{size/2}" cy="{size/2}" r="{size/2}" fill="{color}" opacity="0.14"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="{color}" font-weight="600">{initials}</text></svg>'''
-        return svg
 
-    # build icon map for all skills
-    # try to use brand logos from Simple Icons CDN for known skills, else fallback to initials
-    slug_map = {
-        "Python": "python",
-        "C++": "cplusplus",
-        "Java": "java",
-        "SQL": "mysql",
-        "Flask": "flask",
-        "FastAPI": "fastapi",
-        "Streamlit": "streamlit",
-        "Git": "git",
-        "GitHub": "github",
-        "MySQL": "mysql",
-        "Firebase": "firebase",
-        "Power BI": "powerbi"
+    # Material icon mapping for skill categories
+    skill_category_icons = {
+        "Languages": "code",
+        "Frameworks": "layers",
+        "Tools/Platforms": "build",
+        "Core CS": "developer_board"
     }
 
-    skill_icons = {}
-    base = "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/{slug}.svg"
-    flat_skills = []
-    for cat, items in skills.items():
-        for s in items:
-            slug = slug_map.get(s)
-            url = base.format(slug=slug) if slug else ""
-            if slug:
-                # use <img> so the SVG loads as an image; fallback to initials if loading blocked
-                skill_icons[s] = f'<img src="{url}" alt="{s} logo" class="skill-logo"/>'
-                flat_skills.append({"name": s, "icon": url})
-            else:
-                skill_icons[s] = svg_initials(s)
-                # Note: For Matter.js we need a solid image, since SVG string might not load directly into canvas easily.
-                # But we can try to use a data URI for the SVG!
-                svg_string = skill_icons[s].replace('"', "'")
-                data_uri = f"data:image/svg+xml;utf8,{svg_string}"
-                flat_skills.append({"name": s, "icon": data_uri})
+    # Color accents for skill categories
+    skill_category_colors = {
+        "Languages": "accent-cyan",
+        "Frameworks": "secondary",
+        "Tools/Platforms": "primary",
+        "Core CS": "tertiary"
+    }
 
     achievements = [
-        "Meta PyTorch OpenEnv Hackathon: Selected among the top 800 teams from 31,000+ registered teams nationwide.",
-        "Smart BU Hackathon: Secured Rank 256 among 600+ participating teams.",
-        "LeetCode: Solved 300+ DSA problems across arrays, linked lists, trees and graphs."
+        {
+            "title": "Meta PyTorch OpenEnv Hackathon",
+            "badge": "Top 2.5% Nationwide",
+            "description": "Selected among the top 800 teams from 31,000+ registered teams nationwide.",
+            "stat": "Scale: 31,000+ Competitors",
+            "icon": "military_tech",
+            "color": "accent-cyan"
+        },
+        {
+            "title": "Smart BU Hackathon",
+            "badge": "Rank 256 Placement",
+            "description": "Secured Rank 256 among 600+ participating university teams.",
+            "stat": "Cohort: 600+ Teams",
+            "icon": "trophy",
+            "color": "secondary"
+        },
+        {
+            "title": "LeetCode Mastery",
+            "badge": "Data Structures & Algos",
+            "description": "Solved 300+ DSA problems across arrays, linked lists, trees and graphs.",
+            "stat": "Focus: Dynamic Programming & Graphs",
+            "icon": "terminal",
+            "color": "primary"
+        }
     ]
 
     certifications = [
-        "Certification of Software Engineering by NPTEL.",
-        "Certification of Azure AI Fundamentals by Microsoft",
-        "Certification for Fabric Data Engineer Associate by Microsoft",
-        "Certification for The Bits and Bytes of Computing Networking by Google"
+        {
+            "issuer": "NPTEL",
+            "title": "Software Engineering",
+            "description": "Foundations of lifecycle design & architecture.",
+            "icon": "workspace_premium",
+            "color": "primary"
+        },
+        {
+            "issuer": "Microsoft",
+            "title": "Azure AI Fundamentals",
+            "description": "Cloud AI workloads & Azure ML compute.",
+            "icon": "cloud",
+            "color": "accent-cyan"
+        },
+        {
+            "issuer": "Microsoft",
+            "title": "Fabric Data Engineer Associate",
+            "description": "Enterprise data analytics & warehousing pipelines.",
+            "icon": "dataset",
+            "color": "secondary"
+        },
+        {
+            "issuer": "Google",
+            "title": "Bits & Bytes of Networking",
+            "description": "TCP/IP protocols, routing, & network security.",
+            "icon": "lan",
+            "color": "tertiary"
+        }
     ]
 
     experience = [
@@ -133,7 +124,8 @@ def home():
             "company": "InAmigos Foundation",
             "location": "Remote",
             "date": "June 2026",
-            "description": "Developed AI-powered solutions and contributed to NGO website enhancement by analyzing existing platforms, designing new features, and creating responsive web interfaces using modern development tools."
+            "description": "Developed AI-powered solutions and contributed to NGO website enhancement by analyzing existing platforms, designing new features, and creating responsive web interfaces using modern development tools.",
+            "tools": ["Python", "AI APIs", "Responsive UI"]
         }
     ]
 
@@ -142,33 +134,34 @@ def home():
             "role": "Bachelor of Technology - Computer Science and Engineering",
             "company": "Bennett University",
             "location": "Uttar Pradesh, India",
-            "date": "August 2024 - May 2028",
-            "description": "CGPA: 9.43. Favorite Courses: Object Oriented Programming, Data Structures, Analysis Of Algorithms, Data Science."
+            "date": "Aug 2024 – May 2028",
+            "description": "Specialization in Data Science. Favorite Courses: Object Oriented Programming, Data Structures, Analysis of Algorithms, Data Science.",
+            "highlight": "CGPA: 9.43"
         },
         {
             "role": "Intermediate",
             "company": "Renaissance School",
             "location": "Bulandshahr",
-            "date": "April 2022 - March 2024",
-            "description": "Percentage: 89.4%. Favorite Courses: Physics, Chemistry, Mathematics, Computer Science."
+            "date": "Apr 2022 – Mar 2024",
+            "description": "Curriculum Focus: Physics, Chemistry, Mathematics, Computer Science.",
+            "highlight": "Aggregate: 89.4%"
         },
         {
             "role": "Matriculation",
             "company": "Sunrise Public School",
             "location": "Siyana, Bulandshahr",
-            "date": "April 2020 - March 2022",
-            "description": "Percentage: 87%."
+            "date": "Apr 2020 – Mar 2022",
+            "description": "Foundational general sciences and quantitative mathematics.",
+            "highlight": "Percentage: 87%"
         }
     ]
-
-    import json
 
     return render_template(
         "index.html",
         projects=projects,
         skills=skills,
-        skill_icons=skill_icons,
-        flat_skills=json.dumps(flat_skills),
+        skill_category_icons=skill_category_icons,
+        skill_category_colors=skill_category_colors,
         achievements=achievements,
         certifications=certifications,
         experience=experience,
