@@ -79,9 +79,9 @@ def home():
         },
         {
             "title": "LeetCode Mastery",
-            "badge": "Data Structures & Algos",
-            "description": "Solved 300+ DSA problems across arrays, linked lists, trees and graphs.",
-            "stat": "Focus: Dynamic Programming & Graphs",
+            "badge": "Data Structures & Algorithms",
+            "description": "Solved 300+ problems across arrays, linked lists, trees and graphs.",
+            "stat": None,
             "icon": "terminal",
             "color": "primary"
         }
@@ -142,16 +142,16 @@ def home():
             "role": "Intermediate",
             "company": "Renaissance School",
             "location": "Bulandshahr",
-            "date": "Apr 2022 – Mar 2024",
+            "date": "2022 – 2024",
             "description": "Curriculum Focus: Physics, Chemistry, Mathematics, Computer Science.",
-            "highlight": "Aggregate: 89.4%"
+            "highlight": "Percentage: 89.4%"
         },
         {
             "role": "Matriculation",
             "company": "Sunrise Public School",
             "location": "Siyana, Bulandshahr",
-            "date": "Apr 2020 – Mar 2022",
-            "description": "Foundational general sciences and quantitative mathematics.",
+            "date": "2020 – 2022",
+            "description": None,
             "highlight": "Percentage: 87%"
         }
     ]
