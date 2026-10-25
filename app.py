@@ -39,9 +39,9 @@ def home():
     # Skills grouped per user's resume categories
     skills = {
         "Languages": ["C++", "Python", "Java", "SQL"],
-        "Frameworks": ["Flask", "FastAPI", "Streamlit"],
-        "Tools/Platforms": ["Git", "GitHub", "MySQL", "Firebase", "Power BI"],
-        "Core CS": ["Data Structures & Algorithms", "OOP", "DBMS", "Operating Systems", "Computer Networks"]
+        "Frameworks": ["Flask", "FastAPI", "React", "Tailwind CSS"],
+        "Tools/Platforms": ["Git", "GitHub", "MySQL", "Firebase", "Docker", "Hugging Face", "Render", "Vercel"],
+        "Core CS": ["Data Structures & Algorithms", "OOP", "DBMS", "Computer Networks", "Operating Systems", "System Design"]
     }
 
     # Material icon mapping for skill categories
@@ -120,11 +120,40 @@ def home():
 
     experience = [
         {
+            "role": "Data Analytics Intern",
+            "company": "IBM SkillsBuild",
+            "track": "Data Analytics with AI Internship",
+            "location": "Remote",
+            "date": "17 Aug 2026 – 30 Sep 2026",
+            "status": "Completed",
+            "github": "https://github.com/ShauriyaDeveloper1/IBMSkillBuild-Internship",
+            "project_name": "FraudLens — Financial Anomaly Detection",
+            "project_icon": "security",
+            "description": "Developed FraudLens, an AI-based financial transaction anomaly detection system to identify suspicious activities in highly imbalanced financial datasets.",
+            "highlights": [
+                {
+                    "title": "FraudLens Development",
+                    "text": "Developed FraudLens, an AI-based financial transaction anomaly detection system using Python, Pandas, NumPy, and Scikit-learn to identify suspicious transactions in highly imbalanced financial data."
+                },
+                {
+                    "title": "Feature Engineering & Anomaly Detection Pipeline",
+                    "text": "Engineered transaction and account-balance features and implemented an Isolation Forest pipeline to generate anomaly scores and export suspicious transactions for investigation."
+                }
+            ],
+            "tools": ["Python", "Pandas", "NumPy", "Scikit-learn", "Isolation Forest", "Data Analytics"]
+        },
+        {
             "role": "AI Web Development Intern",
             "company": "InAmigos Foundation",
+            "track": "AI Web Solutions",
             "location": "Remote",
             "date": "June 2026",
+            "status": "Completed",
+            "github": None,
+            "project_name": "AI-Driven Software Augmentation",
+            "project_icon": "smart_toy",
             "description": "Developed AI-powered solutions and contributed to NGO website enhancement by analyzing existing platforms, designing new features, and creating responsive web interfaces using modern development tools.",
+            "highlights": [],
             "tools": ["Python", "AI APIs", "Responsive UI"]
         }
     ]
