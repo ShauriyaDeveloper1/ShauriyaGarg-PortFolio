@@ -120,12 +120,30 @@ def home():
 
     experience = [
         {
+            "role": "AI Web Development Intern",
+            "company": "InAmigos Foundation",
+            "track": "AI Web Solutions",
+            "location": "Remote",
+            "date": "June 2026",
+            "timeline_phase": "Phase 01 • Foundational Tenure",
+            "status": "Completed",
+            "is_latest": False,
+            "github": None,
+            "project_name": "AI-Driven Software Augmentation",
+            "project_icon": "smart_toy",
+            "description": "Developed AI-powered solutions and contributed to NGO website enhancement by analyzing existing platforms, designing new features, and creating responsive web interfaces using modern development tools.",
+            "highlights": [],
+            "tools": ["Python", "AI APIs", "Responsive UI"]
+        },
+        {
             "role": "Data Analytics Intern",
             "company": "IBM SkillsBuild",
             "track": "Data Analytics with AI Internship",
             "location": "Remote",
             "date": "17 Aug 2026 – 30 Sep 2026",
+            "timeline_phase": "Phase 02 • Latest Tenure",
             "status": "Completed",
+            "is_latest": True,
             "github": "https://github.com/ShauriyaDeveloper1/IBMSkillBuild-Internship",
             "project_name": "FraudLens — Financial Anomaly Detection",
             "project_icon": "security",
@@ -141,20 +159,6 @@ def home():
                 }
             ],
             "tools": ["Python", "Pandas", "NumPy", "Scikit-learn", "Isolation Forest", "Data Analytics"]
-        },
-        {
-            "role": "AI Web Development Intern",
-            "company": "InAmigos Foundation",
-            "track": "AI Web Solutions",
-            "location": "Remote",
-            "date": "June 2026",
-            "status": "Completed",
-            "github": None,
-            "project_name": "AI-Driven Software Augmentation",
-            "project_icon": "smart_toy",
-            "description": "Developed AI-powered solutions and contributed to NGO website enhancement by analyzing existing platforms, designing new features, and creating responsive web interfaces using modern development tools.",
-            "highlights": [],
-            "tools": ["Python", "AI APIs", "Responsive UI"]
         }
     ]
 
